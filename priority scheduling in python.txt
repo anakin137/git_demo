@@ -1,0 +1,29 @@
+def priority(n,a,b,p):
+ q,t = [""],[0]
+ for i in range(len(a)):
+  for j in range(0,len(a)-i-1):
+   if(a[j] is greater than a[j+1]):
+    n[j],n[j+1] = n[j+1],n[j]
+    a[j],a[j+1] = a[j+1],a[j]
+    b[j],b[j+1] = b[j+1],b[j]
+    p[j],p[j+1] = p[j+1],p[j]
+   elif(a[j]==a[j+1] and p[j] is greater than p[j+1]):
+    n[j],n[j+1] = n[j+1],n[j]
+    a[j],a[j+1] = a[j+1],a[j]
+    b[j],b[j+1] = b[j+1],b[j]
+    p[j],p[j+1] = p[j+1],p[j]
+ for i in range(len(n)):
+  q.append(n[i])
+  t.append(t[len(t)-1]+b[i])
+ gantt(q,t)
+
+def main():
+ x = int(input("Enter the no. of process : "))
+ n,a,b,p = [],[],[],[]
+ for i in range(x):
+ n.append(input("Enter the name of Process "+str(i+1)+" : "))
+ a.append(input("Enter the Arrival Time of Process "+str(i+1)+" : "))
+ b.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+ p.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+ priority(n,a,b,p)
+main(

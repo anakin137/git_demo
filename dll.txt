@@ -1,0 +1,45 @@
+//Class Library:
+Public Class Class1
+    Public Function Add(ByVal p1 As Double, ByVal p2 As Double)
+        Return p1 + p2
+    End Function
+    Public Function Subb(ByVal p1 As Double, ByVal p2 As Double)
+        Return p1 - p2
+    End Function
+    Public Function Div(ByVal p1 As Double, ByVal p2 As Double)
+        Return p1 / p2
+    End Function
+    Public Function Mul(ByVal p1 As Double, ByVal p2 As Double)
+        Return p1 * p2
+    End Function
+    Public Function Modu(ByVal p1 As Double, ByVal p2 As Double)
+        Return p1 Mod p2
+    End Function
+End Class
+
+
+
+//Windows Forms Application:
+Imports ClassLibrary3
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim obj As New ClassLibrary3.Class1
+        Label1.Text = obj.Add(CDbl(TextBox1.Text), CDbl(TextBox2.Text))
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim obj As New ClassLibrary3.Class1
+        Label2.Text = obj.Subb(CDbl(TextBox1.Text), CDbl(TextBox2.Text))
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim obj As New ClassLibrary3.Class1
+        Label3.Text = obj.Mul(CDbl(TextBox1.Text), CDbl(TextBox2.Text))
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim obj As New ClassLibrary3.Class1
+        Label4.Text = obj.Div(CDbl(TextBox1.Text), CDbl(TextBox2.Text))
+    End Sub
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim obj As New ClassLibrary3.Class1
+        Label5.Text = obj.Modu(CDbl(TextBox1.Text), CDbl(TextBox2.Text))
+    End Sub
+End Class
