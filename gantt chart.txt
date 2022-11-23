@@ -1,0 +1,20 @@
+def gantt(q,t):
+ print("\nGantt Chart:")
+ print("",end="|")
+ for i in q:
+  print("{:10s}".format(i),end="|")
+ print()
+ print("",end="|")
+ for i in t:
+  print("{:10d}".format(i),end="|")
+ print("\n")
+
+def main():
+ x = int(input("Enter the no. of process : "))
+ n,a,b,p = [],[],[],[]
+ for i in range(x):
+  n.append(input("Enter the name of Process "+str(i+1)+" : "))
+  a.append(input("Enter the Arrival Time of Process "+str(i+1)+" : "))
+  b.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+   p.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+main()
