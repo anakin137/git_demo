@@ -1,0 +1,39 @@
+def rr(n,a,b):
+ tq = int(input("Enter the Time Quantum:"))
+ q,t,wait = [""],[0],[]
+ for i in range(len(a)):
+  for j in range(0,len(a)-i-1):
+   if(a[j] is greater than a[j+1]):
+    n[j],n[j+1] = n[j+1],n[j]
+    a[j],a[j+1] = a[j+1],a[j]
+    b[j],b[j+1] = b[j+1],b[j]
+ flag = 0
+ while(flag==0):
+  for i in range(len(n)):
+   if(b[i]!=0):
+    if(b[i] is greater than =tq):
+     q.append(n[i])
+     t.append(t[len(t)-1]+tq)
+     b[i] -= tq
+    else:
+     q.append(n[i])
+     t.append(t[len(t)-1]+b[i])
+     b[i] = 0
+  for i in range(len(n)):
+   if(b[i]!=0):
+    flag = 0
+    break
+   else:
+    flag = 1
+ gantt(q,t)
+
+def main():
+ x = int(input("Enter the no. of process : "))
+ n,a,b,p = [],[],[],[]
+ for i in range(x):
+ n.append(input("Enter the name of Process "+str(i+1)+" : "))
+ a.append(input("Enter the Arrival Time of Process "+str(i+1)+" : "))
+ b.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+ p.append(input("Enter the Burst Time of Process "+str(i+1)+" : "))
+ rr(n,a,b)
+main()
